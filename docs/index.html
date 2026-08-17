@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Intent — say what it is, not what it looks like</title>
+  <meta name="description" content="Intent is an intent-based styling system: semantic roles, relationship spacing, OKLCH theming, and a design linter built for humans and AI coding agents.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%235b52e0'/%3E%3Ccircle cx='16' cy='9.5' r='3' fill='white'/%3E%3Crect x='13.5' y='15' width='5' height='11' rx='2.5' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="intent.css">
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+
+  <div class="adaptive inset-separate">
+    <!-- Every visual decision on this page comes from Intent roles — no custom CSS. -->
+    <div class="stack-sectioned">
+      <header class="row-separate spread wrap">
+        <div class="row-related">
+          <strong class="text-heading">Intent</strong>
+          <span class="text-caption muted">v0.1.0 · experimental</span>
+        </div>
+        <nav class="row-related wrap" aria-label="Site">
+          <a class="action-quiet" href="https://github.com/dataswarmproject/intent-css">GitHub</a>
+          <a class="action-quiet" href="https://github.com/dataswarmproject/intent-css#vocabulary">Vocabulary</a>
+          <span class="row-related" role="group" aria-label="Color scheme">
+            <button class="action-quiet selected" data-scheme="auto" type="button">Auto</button>
+            <button class="action-quiet" data-scheme="light" type="button">Light</button>
+            <button class="action-quiet" data-scheme="dark" type="button">Dark</button>
+          </span>
+        </nav>
+      </header>
+
+      <main id="main" class="stack-sectioned">
+        <section class="stack-separate center">
+          <h1 class="text-display measure">Say what it is.<br>Not what it looks like.</h1>
+          <p class="muted measure">
+            Intent is a styling system with a closed vocabulary of semantic roles.
+            Markup declares meaning — <em>card, primary action, related stack</em> —
+            and the theme decides the pixels. One OKLCH hue seeds the palette,
+            relationships derive the spacing, and a design linter audits the result,
+            in light and dark, for humans and AI coding agents alike.
+          </p>
+          <div class="row-related wrap center">
+            <a class="action-primary" href="https://github.com/dataswarmproject/intent-css#quickstart">Get started</a>
+            <a class="action-secondary" href="https://github.com/dataswarmproject/intent-css#why">Why Intent?</a>
+          </div>
+          <p class="text-caption faint">FSL-1.1-MIT · free for internal use, converts to MIT</p>
+        </section>
+
+        <section class="grid-collection">
+          <article class="card stack-related">
+            <h2 class="text-heading">Utility CSS says</h2>
+            <div class="surface-sunken inset-related">
+              <pre class="text-caption"><code>&lt;div class="bg-white dark:bg-zinc-900
+  rounded-xl shadow p-6 flex
+  flex-col gap-3"&gt;</code></pre>
+            </div>
+            <p class="muted">Nine visual decisions, re-made at every call site. Consistency is discipline.</p>
+          </article>
+          <article class="card stack-related">
+            <h2 class="text-heading">Intent says</h2>
+            <div class="surface-sunken inset-related">
+              <pre class="text-caption"><code>&lt;div class="card stack-related"&gt;</code></pre>
+            </div>
+            <p class="muted">Two decisions of meaning. Dark mode, density, and rebrands become theme swaps.</p>
+          </article>
+          <article class="card stack-related">
+            <h2 class="text-heading">The linter sees meaning</h2>
+            <div class="surface-sunken inset-related">
+              <pre class="text-caption"><code>12:8  error  unknown-intent
+"surface-rased" — did you mean
+"surface-raised"?</code></pre>
+            </div>
+            <p class="muted">Semantic classes make design reviewable: typos, duplicate primaries, WCAG contrast — at build time.</p>
+          </article>
+        </section>
+
+        <section class="stack-separate">
+          <h2 class="text-title">Four pillars</h2>
+          <div class="grid-collection">
+            <article class="card stack-related">
+              <h3 class="text-heading">Roles, not values</h3>
+              <p class="muted">A finite vocabulary of 41 roles. A class is either meaningful or it's an error — nothing in between.</p>
+            </article>
+            <article class="card stack-related">
+              <h3 class="text-heading">Relationships, not numbers</h3>
+              <p class="muted">Spacing is <code>related</code>, <code>separate</code>, or <code>sectioned</code>. One base and one ratio derive every distance.</p>
+            </article>
+            <article class="card stack-related">
+              <h3 class="text-heading">Modern CSS native</h3>
+              <p class="muted">Container queries by default, <code>light-dark()</code> theming, OKLCH color math, cascade layers. No legacy tail.</p>
+            </article>
+            <article class="card stack-related">
+              <h3 class="text-heading">Built for AI agents</h3>
+              <p class="muted">A bounded vocabulary agents can't hallucinate past, <code>check --json</code> to self-correct, and an AGENTS.md contract from <code>intent init</code>.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="stack-separate">
+          <h2 class="text-title">Feedback, audited</h2>
+          <div class="stack-related">
+            <div class="note-info"><p><strong>Info</strong> — every note color pair is contrast-checked in both schemes.</p></div>
+            <div class="note-success"><p><strong>Success</strong> — the default theme ships passing its own audit.</p></div>
+            <div class="note-warn"><p><strong>Warning</strong> — two primary actions in one card? The linter will tell you.</p></div>
+            <div class="note-danger"><p><strong>Danger</strong> — inline styles are invisible to the system, so they're flagged.</p></div>
+          </div>
+        </section>
+
+        <section class="grid-collection">
+          <form class="card stack-related adaptive" aria-label="Waitlist demo form">
+            <h2 class="text-heading">Container-query form</h2>
+            <p class="text-caption muted">This form watches its own width — not the viewport. Resize the window: the row below collapses when the card gets narrow.</p>
+            <label class="stack-related">
+              <span class="text-caption muted">Email</span>
+              <input class="field" type="email" name="email" placeholder="you@studio.dev" autocomplete="email">
+            </label>
+            <div class="row-related collapse">
+              <button class="action-primary full" type="button">Join the waitlist</button>
+              <button class="action-quiet full" type="button">Read the docs</button>
+            </div>
+          </form>
+          <article class="card stack-related">
+            <h2 class="text-heading">One hue in, a system out</h2>
+            <p class="muted">The entire palette on this page derives from <code>brand: { hue: 264 }</code>. Change one number and surfaces, links, actions, notes, focus rings, and shadows follow — with contrast guarantees intact.</p>
+            <div class="surface-sunken inset-related">
+              <pre class="text-caption"><code>export default {
+  brand: { hue: 264, chroma: 0.16 },
+}</code></pre>
+            </div>
+            <a class="action-secondary" href="https://github.com/dataswarmproject/intent-css#theming">Theming guide</a>
+          </article>
+        </section>
+      </main>
+
+      <footer class="stack-related">
+        <hr class="divider">
+        <div class="row-separate spread wrap">
+          <p class="text-caption muted">Intent · a DataSwarm Project experiment · FSL-1.1-MIT</p>
+          <div class="row-related">
+            <a class="text-caption" href="https://github.com/dataswarmproject/intent-css">Source</a>
+            <a class="text-caption" href="https://github.com/dataswarmproject/intent-css/blob/main/LICENSE.md">License</a>
+            <a class="text-caption" href="https://github.com/dataswarmproject/intent-css/blob/main/AGENTS.md">AGENTS.md</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll("[data-scheme]");
+    const setScheme = (mode) => {
+      document.documentElement.style.colorScheme = mode === "auto" ? "" : mode;
+      buttons.forEach((b) => b.classList.toggle("selected", b.dataset.scheme === mode));
+    };
+    buttons.forEach((b) => b.addEventListener("click", () => setScheme(b.dataset.scheme)));
+  </script>
+</body>
+</html>

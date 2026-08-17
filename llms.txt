@@ -1,0 +1,70 @@
+# Intent (intent-css)
+
+> Intent is an intent-based CSS styling system. Markup uses a closed vocabulary of 41
+> semantic role classes (what an element IS); a compiled theme decides what each role
+> looks like. One OKLCH brand hue seeds the entire palette, spacing derives from
+> named relationships instead of pixel values, light/dark mode is automatic via
+> light-dark(), responsiveness uses container queries, and a design linter audits
+> markup and WCAG contrast at build time. License: FSL-1.1-MIT (source-available,
+> converts to MIT two years per release).
+
+Key facts:
+- Install: `npm install intent-css` (Node >= 20, zero runtime dependencies)
+- CLI: `intent init` (scaffolds intent.config.mjs + AGENTS.md), `intent build`
+  (scan sources, emit stylesheet), `intent check [--json]` (design lint + WCAG
+  contrast audit, exit 1 on errors), `intent vocab [--json]` (the vocabulary as data)
+- Config seeds: brand hue/chroma, space base+ratio, type base+ratio, radius,
+  density, collapse width, contrast minimums
+- Never write CSS values in markup: no inline styles, no utility classes, no
+  media queries, no dark-mode variants
+- Spacing = wrap siblings in stack-*/row-* and let the gap express the
+  relationship (related / separate / sectioned)
+- One action-primary per action scope (card, form, nav, dialog) — linted
+- Responsive = `adaptive` on a wrapper + `collapse` on rows (container queries)
+
+## Vocabulary (role — meaning)
+
+Surfaces (exclusive): surface — default plane; surface-raised — lifted plane;
+surface-sunken — recessed plane; surface-overlay — floating plane (dialogs);
+card — self-contained raised block with border, radius, padding.
+
+Actions (exclusive): action-primary — THE action of a container (one per scope);
+action-secondary — supporting action; action-quiet — low-emphasis action;
+action-danger — destructive action.
+
+Text (exclusive): text-display — hero statement; text-title — page/section title;
+text-heading — subsection/card heading; text-body — reading text; text-caption —
+small supporting text. Modifiers: muted — de-emphasized but readable (>= 4.5:1);
+faint — decorative only (>= 3:1).
+
+Stacks (exclusive): stack-related / stack-separate / stack-sectioned — vertical
+flow at increasing semantic distance. Rows (exclusive): row-related /
+row-separate — horizontal equivalents.
+
+Layout: grid-collection — responsive grid of equivalent items; adaptive — marks
+a container-query container; collapse — row becomes a stack in narrow
+containers; wrap — allow wrapping; spread — space-between; center — center
+children and text; full — full width; measure — cap line length at 65ch.
+
+Insets (exclusive): inset-compact / inset-related / inset-separate — padding roles.
+
+Notes (exclusive): note-info / note-success / note-warn / note-danger — feedback
+callouts with audited color pairs.
+
+Controls & misc: field — input/select/textarea; divider — hairline; interactive —
+hover affordance for clickable surfaces; selected — chosen item in a set;
+sr-only — visually hidden, screen-reader accessible.
+
+## Agent workflow
+
+After editing markup: run `npx intent build` then `npx intent check --json`;
+fix every diagnostic with severity "error" (rules: unknown-intent,
+conflicting-roles, duplicate-primary, inline-style; plus theme contrast
+failures) and re-run until ok=true / exit code 0.
+
+## Docs
+
+- [README](https://github.com/dataswarmproject/intent-css/blob/main/README.md): full documentation
+- [AGENTS.md](https://github.com/dataswarmproject/intent-css/blob/main/AGENTS.md): the drop-in styling contract for coding agents
+- [Live demo](https://dataswarmproject.github.io/intent-css/): the system styling its own page
+- [LICENSE](https://github.com/dataswarmproject/intent-css/blob/main/LICENSE.md): FSL-1.1-MIT terms

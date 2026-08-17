@@ -1,0 +1,57 @@
+{
+  "name": "intent-css",
+  "version": "0.1.0",
+  "description": "Intent — an intent-based styling system. Semantic roles instead of utility values, relationship-based spacing, OKLCH theming, container-query responsiveness, and a design linter built for humans and AI coding agents.",
+  "keywords": [
+    "css",
+    "design-system",
+    "design-tokens",
+    "styling",
+    "oklch",
+    "container-queries",
+    "design-linter",
+    "ai-friendly",
+    "llm",
+    "agents",
+    "semantic-css"
+  ],
+  "homepage": "https://dataswarmproject.github.io/intent-css/",
+  "bugs": "https://github.com/dataswarmproject/intent-css/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dataswarmproject/intent-css.git"
+  },
+  "license": "SEE LICENSE IN LICENSE.md",
+  "author": "DataSwarm Project",
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "intent": "./bin/intent.js",
+    "intent-css": "./bin/intent.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "LICENSE.md",
+    "README.md",
+    "AGENTS.md",
+    "llms.txt"
+  ],
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test",
+    "demo": "node bin/intent.js build",
+    "check": "node bin/intent.js check",
+    "prepublishOnly": "npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "typescript": "^5.9.3"
+  }
+}
