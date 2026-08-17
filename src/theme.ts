@@ -76,6 +76,7 @@ export function resolveTheme(config: FullConfig): ResolvedTheme {
     "--in-text-heading": type.heading,
     "--in-text-title": type.title,
     "--in-text-display": type.display,
+    "--in-text-hero": type.hero,
     "--in-font-ui": config.fonts.ui,
     "--in-font-display": config.fonts.display,
     "--in-font-mono": config.fonts.mono,

@@ -1,4 +1,4 @@
-# Styling instructions — Intent (intent-css v0.1.0)
+# Styling instructions — Intent (intent-css v0.2.0)
 
 This project is styled with **Intent**: a closed vocabulary of semantic CSS
 classes. Markup declares what an element *is*; the theme decides what it looks
@@ -49,11 +49,13 @@ Roles sharing a group are mutually exclusive on one element.
 | `action-secondary` | action | A supporting action, visually subordinate to the primary. |
 | `action-quiet` | action | A low-emphasis action (toolbars, inline links that act). |
 | `action-danger` | action | A destructive action. Pair with confirmation UX. |
+| `text-hero` | text | The one statement that owns the page. Fluid — scales with the viewport. |
 | `text-display` | text | Hero-level statement text. Rarely more than one per page. |
 | `text-title` | text | Page or section title. |
 | `text-heading` | text | Subsection or card heading. |
 | `text-body` | text | Default reading text. |
 | `text-caption` | text | Small supporting text: labels, metadata, footnotes. |
+| `eyebrow` | text | A small tracked label that introduces a section. |
 | `muted` | — | De-emphasized color, still fully readable (audited ≥ 4.5:1). |
 | `faint` | — | Decorative-level color (audited ≥ 3:1). Not for essential copy. |
 | `stack-related` | stack | Vertical flow of items that belong together (a label and its field). |
@@ -77,6 +79,7 @@ Roles sharing a group are mutually exclusive on one element.
 | `note-warn` | note | Caution callout. |
 | `note-danger` | note | Error or destructive-consequence callout. |
 | `field` | — | A text input, select, or textarea. |
+| `chip` | — | An inline pill for tags, counts, and metadata. |
 | `divider` | — | A hairline separator. |
 | `interactive` | — | Hover affordance for clickable surfaces (cards that link somewhere). |
 | `selected` | — | Marks the chosen item in a set. |

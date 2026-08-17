@@ -106,6 +106,12 @@ export function buildVocabulary(opts: { collapse: string }): Role[] {
 
     // ── Text roles ───────────────────────────────────────────────────────
     {
+      name: "text-hero",
+      group: "text",
+      summary: "The one statement that owns the page. Fluid — scales with the viewport.",
+      css: `.text-hero { font-family: var(--in-font-display); font-size: var(--in-text-hero); font-weight: 800; line-height: 0.98; letter-spacing: -0.03em; text-wrap: balance; }`,
+    },
+    {
       name: "text-display",
       group: "text",
       summary: "Hero-level statement text. Rarely more than one per page.",
@@ -134,6 +140,12 @@ export function buildVocabulary(opts: { collapse: string }): Role[] {
       group: "text",
       summary: "Small supporting text: labels, metadata, footnotes.",
       css: `.text-caption { font-size: var(--in-text-caption); font-weight: 500; line-height: 1.35; letter-spacing: 0.01em; }`,
+    },
+    {
+      name: "eyebrow",
+      group: "text",
+      summary: "A small tracked label that introduces a section.",
+      css: `.eyebrow { font-size: var(--in-text-caption); font-weight: 600; line-height: 1.35; letter-spacing: 0.09em; text-transform: uppercase; color: var(--in-text-muted); }`,
     },
     {
       name: "muted",
@@ -254,6 +266,11 @@ export function buildVocabulary(opts: { collapse: string }): Role[] {
       css: `.field { display: block; width: 100%; background: var(--in-surface); color: var(--in-text); border: 1px solid var(--in-line-strong); border-radius: var(--in-radius-control); padding: 0.55em 0.8em; transition: border-color 120ms ease, box-shadow 120ms ease; }
 .field::placeholder { color: var(--in-text-faint); }
 .field:focus-visible { outline: none; border-color: var(--in-brand); box-shadow: 0 0 0 3px var(--in-brand-soft); }`,
+    },
+    {
+      name: "chip",
+      summary: "An inline pill for tags, counts, and metadata.",
+      css: `.chip { display: inline-flex; align-items: center; gap: var(--in-gap-compact); padding: 0.3em 0.85em; border: 1px solid var(--in-line); border-radius: 999px; background: var(--in-surface-sunken); font-size: var(--in-text-caption); font-weight: 500; line-height: 1.4; }`,
     },
     {
       name: "divider",

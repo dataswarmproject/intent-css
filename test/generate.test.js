@@ -41,3 +41,11 @@ test("prefers-reduced-motion guard is always present", () => {
   const cssText = generateCss(theme, new Set(), "0.0.0-test");
   assert.match(cssText, /prefers-reduced-motion: reduce/);
 });
+
+test("v0.2.0 roles: text-hero is fluid, eyebrow tracks uppercase, chip is a pill", () => {
+  const cssText = generateCss(theme, new Set(["text-hero", "eyebrow", "chip"]), "0.0.0-test");
+  assert.match(cssText, /--in-text-hero: clamp\(/);
+  assert.match(cssText, /\.text-hero \{[^}]*font-size: var\(--in-text-hero\)/);
+  assert.match(cssText, /\.eyebrow \{[^}]*text-transform: uppercase/);
+  assert.match(cssText, /\.chip \{[^}]*border-radius: 999px/);
+});

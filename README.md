@@ -47,7 +47,7 @@ entire product by changing one hue.
 
 ## Why
 
-**Roles, not values.** A closed vocabulary of 41 roles (`card`, `action-primary`,
+**Roles, not values.** A closed vocabulary of 44 roles (`card`, `action-primary`,
 `stack-related`, `note-warn`…). A class is either meaningful or it is an error —
 there is no in-between, no `mt-[13px]`.
 
@@ -102,19 +102,19 @@ CSS written and no breakpoints declared.
 
 ## Vocabulary
 
-Forty-one roles across eight families. Roles sharing a family are mutually
+Forty-four roles across eight families. Roles sharing a family are mutually
 exclusive on one element — the linter enforces it.
 
 | Family | Roles |
 | --- | --- |
 | **Surfaces** | `surface` `surface-raised` `surface-sunken` `surface-overlay` `card` |
 | **Actions** | `action-primary` `action-secondary` `action-quiet` `action-danger` |
-| **Text** | `text-display` `text-title` `text-heading` `text-body` `text-caption` + `muted` `faint` |
+| **Text** | `text-hero` `text-display` `text-title` `text-heading` `text-body` `text-caption` `eyebrow` + `muted` `faint` |
 | **Stacks & rows** | `stack-related` `stack-separate` `stack-sectioned` `row-related` `row-separate` |
 | **Layout** | `grid-collection` `adaptive` `collapse` `wrap` `spread` `center` `full` `measure` |
 | **Insets** | `inset-compact` `inset-related` `inset-separate` |
 | **Notes** | `note-info` `note-success` `note-warn` `note-danger` |
-| **Controls & misc** | `field` `divider` `interactive` `selected` `sr-only` |
+| **Controls & misc** | `field` `chip` `divider` `interactive` `selected` `sr-only` |
 
 Every role with a one-line meaning: `npx intent vocab` (or `--json` for tooling,
 or [AGENTS.md](AGENTS.md) for the full annotated table).

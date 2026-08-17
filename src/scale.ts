@@ -11,6 +11,8 @@ export interface TypeScale {
   heading: string;
   title: string;
   display: string;
+  /** Fluid statement size: clamps between display (small viewports) and ratio^6 (wide ones). */
+  hero: string;
 }
 
 const rem = (n: number): string => `${Number(n.toFixed(3))}rem`;
@@ -32,11 +34,13 @@ export function spaceScale(base: number, ratio: number, density: number): SpaceS
 
 /** Modular type scale from a body size and a ratio. */
 export function typeScale(base: number, ratio: number): TypeScale {
+  const display = rem(base * ratio ** 4);
   return {
     caption: rem(base / ratio),
     body: rem(base),
     heading: rem(base * ratio ** 2),
     title: rem(base * ratio ** 3),
-    display: rem(base * ratio ** 4),
+    display,
+    hero: `clamp(${display}, 6.5vw + 0.6rem, ${rem(base * ratio ** 6)})`,
   };
 }

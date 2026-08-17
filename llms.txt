@@ -1,6 +1,6 @@
 # Intent (intent-css)
 
-> Intent is an intent-based CSS styling system. Markup uses a closed vocabulary of 41
+> Intent is an intent-based CSS styling system. Markup uses a closed vocabulary of 44
 > semantic role classes (what an element IS); a compiled theme decides what each role
 > looks like. One OKLCH brand hue seeds the entire palette, spacing derives from
 > named relationships instead of pixel values, light/dark mode is automatic via
@@ -32,10 +32,11 @@ Actions (exclusive): action-primary — THE action of a container (one per scope
 action-secondary — supporting action; action-quiet — low-emphasis action;
 action-danger — destructive action.
 
-Text (exclusive): text-display — hero statement; text-title — page/section title;
-text-heading — subsection/card heading; text-body — reading text; text-caption —
-small supporting text. Modifiers: muted — de-emphasized but readable (>= 4.5:1);
-faint — decorative only (>= 3:1).
+Text (exclusive): text-hero — the one fluid statement that owns the page;
+text-display — hero statement; text-title — page/section title; text-heading —
+subsection/card heading; text-body — reading text; text-caption — small
+supporting text; eyebrow — small tracked uppercase section label. Modifiers:
+muted — de-emphasized but readable (>= 4.5:1); faint — decorative only (>= 3:1).
 
 Stacks (exclusive): stack-related / stack-separate / stack-sectioned — vertical
 flow at increasing semantic distance. Rows (exclusive): row-related /
@@ -51,9 +52,10 @@ Insets (exclusive): inset-compact / inset-related / inset-separate — padding r
 Notes (exclusive): note-info / note-success / note-warn / note-danger — feedback
 callouts with audited color pairs.
 
-Controls & misc: field — input/select/textarea; divider — hairline; interactive —
-hover affordance for clickable surfaces; selected — chosen item in a set;
-sr-only — visually hidden, screen-reader accessible.
+Controls & misc: field — input/select/textarea; chip — inline pill for tags and
+metadata; divider — hairline; interactive — hover affordance for clickable
+surfaces; selected — chosen item in a set; sr-only — visually hidden,
+screen-reader accessible.
 
 ## Agent workflow
 

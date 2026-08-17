@@ -24,3 +24,8 @@ test("type scale is modular", () => {
   assert.equal(t.title, "1.953rem");
   assert.equal(t.display, "2.441rem");
 });
+
+test("hero step is fluid between display and ratio^6", () => {
+  const t = typeScale(1, 1.25);
+  assert.equal(t.hero, "clamp(2.441rem, 6.5vw + 0.6rem, 3.815rem)");
+});

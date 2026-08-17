@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.2.0 — 2026-08-17
+
+Three vocabulary additions driven by building the project site with the
+framework itself, plus a redesigned site.
+
+- **`text-hero`** — a fluid statement size above `text-display`; the type scale
+  gains a `hero` step that clamps between `display` and ratio⁶ across viewports.
+- **`eyebrow`** — a small tracked uppercase label that introduces a section
+  (joins the `text` exclusivity group).
+- **`chip`** — an inline pill for tags, counts, and metadata.
+- New `--in-text-hero` token; vocabulary grows 41 → 44 roles.
+- The site (docs/) is now a specimen gallery: every component exhibited live,
+  built exclusively from Intent roles and gated by `intent check` in CI.
+
 ## 0.1.0 — 2026-08-17
 
 Initial public release.

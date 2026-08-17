@@ -1,6 +1,6 @@
 {
   "name": "intent-css",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Intent — an intent-based styling system. Semantic roles instead of utility values, relationship-based spacing, OKLCH theming, container-query responsiveness, and a design linter built for humans and AI coding agents.",
   "keywords": [
     "css",
